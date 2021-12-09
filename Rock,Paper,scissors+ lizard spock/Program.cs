@@ -20,12 +20,16 @@ if (Userinput == "y")
 {
 
 
-    while (PlayerPoints > GameLose || ComputerPoints > GameLose )
+    while (true)
     {
         Console.WriteLine("Please Pick an Option Rock ,Paper ,Scissors ");
         Console.WriteLine("----------------------------------------------");
+        Console.WriteLine("");
+        Console.WriteLine("Your Points ="+PlayerPoints+"/Computer Points="+ComputerPoints);
+        Console.WriteLine("");
         string Userinput2 = Console.ReadLine();
         var Computerinput = random.Next(0, 4);
+
 
         if (Userinput2 == "Rock")
         {
@@ -37,6 +41,7 @@ if (Userinput == "y")
                     Console.Clear();
                     Console.WriteLine("The Computer Picked Rock");
                     Console.WriteLine("No one loses , No one loses points");
+                    
                     Console.WriteLine("");
                     Console.WriteLine("Press Enter To Continue");
 
@@ -44,9 +49,9 @@ if (Userinput == "y")
                 case 2:
                     Console.Clear();
                     Console.WriteLine("The Computer Picked Scissors");
-                    Console.WriteLine("The Computer loses a point"+ComputerPoints+":Computer Points");
+                    Console.WriteLine("The Computer loses a point");
                     Console.WriteLine("-----------------------------");
-                    Console.WriteLine("Your Points ----:" + PlayerPoints);
+                    
                     Console.WriteLine("");
                     Console.WriteLine("Press Enter To Continue");
 
@@ -56,7 +61,8 @@ if (Userinput == "y")
                     Console.Clear();
                     Console.WriteLine("The Computer Picked Paper");
                     Console.WriteLine("-----------------------------");
-                    Console.WriteLine("You Lost and will lose 1 point ---:" + PlayerPoints + ":Points left");
+                    Console.WriteLine("You Lost and will lose 1 point");
+                    
                     Console.WriteLine("");
                     Console.WriteLine("Press Enter To Continue");
 
@@ -85,9 +91,9 @@ if (Userinput == "y")
                 case 2:
                     Console.Clear();
                     Console.WriteLine("The Computer Picked Paper");
-                    Console.WriteLine("The Computer loses a point" + ComputerPoints + ":Computer Points");
+                    Console.WriteLine("The Computer loses a point");
                     Console.WriteLine("-----------------------------");
-                    Console.WriteLine("Your Points----:" + PlayerPoints);
+                    
                     Console.WriteLine("");
                     Console.WriteLine("Press Enter To Continue");
                     ComputerPoints--;
@@ -96,7 +102,8 @@ if (Userinput == "y")
                     Console.Clear();
                     Console.WriteLine("The Computer Picked Rock");
                     Console.WriteLine("-----------------------------");
-                    Console.WriteLine("You Lost and will lose 1 point ---:" + PlayerPoints + ":Points left");
+                    Console.WriteLine("You Lost and will lose 1 point");
+                    
                     Console.WriteLine("");
                     Console.WriteLine("Press Enter To Continue");
                     PlayerPoints--;
@@ -120,9 +127,9 @@ if (Userinput == "y")
                 case 2:
                     Console.Clear();
                     Console.WriteLine("The Computer Picked Rock");
-                    Console.WriteLine("The Computer loses a point" + ComputerPoints + ":Computer Points");
+                    Console.WriteLine("The Computer loses a point");
                     Console.WriteLine("-----------------------------");
-                    Console.WriteLine("Your Points----:" + PlayerPoints);
+                    
                     Console.WriteLine("");
                     Console.WriteLine("Press Enter To Continue");
                     ComputerPoints--;
@@ -131,17 +138,38 @@ if (Userinput == "y")
                     Console.Clear();
                     Console.WriteLine("The Computer Picked Scissors");
                     Console.WriteLine("-----------------------------");
-                    Console.WriteLine("You Lost and will lose 1 point ---:" + PlayerPoints + ":Points left");
+                    Console.WriteLine("You Lost and will lose 1 point");
+                    
                     Console.WriteLine("");
                     Console.WriteLine("Press Enter To Continue");
                     PlayerPoints--;
                     break;
                     
             }
+            
         }
+
+        else if (PlayerPoints > GameLose)
+        {
+            Console.WriteLine("Sadly u have lost");
+            Console.WriteLine("Please Press Enter to exit");
+            Console.ReadLine();
+            Environment.Exit(0);
+
+        }
+        else if (ComputerPoints > GameLose)
+        {
+            Console.WriteLine("You have won !!!!");
+            Console.WriteLine("Congrats!!");
+            Console.WriteLine("Press Enter to exit");
+            Console.ReadLine();
+            Environment.Exit(0);
+        }
+
         Console.ReadLine(); 
     }   
 }
+
 
 else if (Userinput=="n")
 {
